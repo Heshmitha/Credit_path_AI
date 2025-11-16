@@ -1,0 +1,18 @@
+[
+  "Age",
+  "Income",
+  "LoanAmount",
+  "CreditScore",
+  "MonthsEmployed",
+  "NumCreditLines",
+  "InterestRate",
+  "LoanTerm",
+  "DTIRatio",
+  "Education",
+  "EmploymentType",
+  "MaritalStatus",
+  "HasMortgage",
+  "HasDependents",
+  "LoanPurpose",
+  "HasCoSigner"
+]

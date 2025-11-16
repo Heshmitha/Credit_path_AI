@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Path AI - Home</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Credit Path AI</h1>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="login.html" class="nav-link">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Smart Loan Prediction</h1>
+            <p>AI-powered credit assessment for faster, more accurate loan decisions</p>
+            <a href="login.html" class="cta-button">Get Started</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Credit Path AI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = localStorage.getItem('user');
+            // If user is logged in, change "Login" to "Dashboard"
+            if (user) {
+                const loginLink = document.querySelector('a[href="login.html"]');
+                if (loginLink) {
+                    loginLink.textContent = 'Dashboard';
+                    loginLink.href = 'home.html';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

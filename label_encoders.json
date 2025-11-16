@@ -1,0 +1,35 @@
+{
+  "Education": {
+    "classes": [
+      "Bachelor's",
+      "High School",
+      "Master's",
+      "PhD"
+    ]
+  },
+  "EmploymentType": {
+    "classes": [
+      "Full-time",
+      "Part-time",
+      "Self-employed",
+      "Unemployed"
+    ]
+  },
+  "MaritalStatus": {
+    "classes": [
+      "Divorced",
+      "Married",
+      "Single"
+    ]
+  },
+  "LoanPurpose": {
+    "classes": [
+      "Business",
+      "Car",
+      "Debt Consolidation",
+      "Education",
+      "Home",
+      "Other"
+    ]
+  }
+}
