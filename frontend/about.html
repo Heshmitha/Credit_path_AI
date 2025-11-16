@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Path AI - About</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Credit Path AI</h1>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="#" class="nav-link" onclick="logout()">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="about-container">
+            <h2>About Credit Path AI</h2>
+            
+            <div class="about-section">
+                <h3>Our Mission</h3>
+                <p>
+                    Credit Path AI leverages advanced machine learning algorithms to provide 
+                    accurate and fair loan approval predictions. Our XGBoost model analyzes 
+                    multiple financial and personal factors to help lenders make informed decisions.
+                </p>
+            </div>
+
+            <div class="about-section">
+                <h3>How It Works</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>Data Collection</h4>
+                        <p>Collect comprehensive applicant information including financial history, employment status, and personal details.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>AI Analysis</h4>
+                        <p>Our XGBoost model processes the data through multiple decision trees to identify patterns and risk factors.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>Prediction</h4>
+                        <p>Generate accurate approval/rejection predictions with confidence probabilities for better decision making.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h3>Model Features</h3>
+                <ul class="feature-list">
+                    <li><strong>Credit Score Analysis:</strong> Evaluates credit history and score</li>
+                    <li><strong>Income Assessment:</strong> Analyzes income stability and debt-to-income ratio</li>
+                    <li><strong>Employment Verification:</strong> Considers employment history and type</li>
+                    <li><strong>Loan Purpose Evaluation:</strong> Assesses the purpose and risk of the loan</li>
+                    <li><strong>Collateral Consideration:</strong> Factors in mortgages and co-signers</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Credit Path AI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Check authentication on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = localStorage.getItem('user');
+            if (!user) {
+                window.location.href = 'login.html';
+                return;
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
