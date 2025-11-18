@@ -74,25 +74,23 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
 });
 
 function displayResult(result) {
+    console.log("🔍 FULL RESULT:", result); // Debug line
+    
     const resultContainer = document.getElementById('result');
     const resultContent = document.getElementById('resultContent');
     
     resultContainer.style.display = 'block';
     
-    // 🟢 MODIFICATION 1: Calculate both percentage and decimal
-    const probabilityPercent = (result.probability * 100).toFixed(2);
-    const probabilityDecimal = result.probability.toFixed(2);
+    // Simple test - force show probability
+    const testProbability = 0.85; // Test number
     
     if (result.prediction === 1) {
         resultContainer.className = 'result-container result-approved';
         resultContent.innerHTML = `
             <div class="result-content">
                 <h4>✅ Loan Approved!</h4>
-                <p>Your loan application has been approved.</p>
-                <!-- 🟢 MODIFICATION 2: Added Confidence line -->
-                <p class="confidence">Confidence: ${probabilityPercent}%</p>
-                <!-- 🟢 MODIFICATION 3: Added Probability line -->
-                <p class="probability">Probability: ${probabilityDecimal}</p>
+                <p>TEST Probability: ${testProbability}</p>
+                <p>Real Probability: ${result.probability}</p>
             </div>
         `;
     } else {
@@ -100,14 +98,12 @@ function displayResult(result) {
         resultContent.innerHTML = `
             <div class="result-content">
                 <h4>❌ Loan Rejected</h4>
-                <p>Unfortunately, your loan application has been rejected.</p>
-                <!-- 🟢 MODIFICATION 4: Added Confidence line -->
-                <p class="confidence">Confidence: ${probabilityPercent}%</p>
-                <!-- 🟢 MODIFICATION 5: Added Probability line -->
-                <p class="probability">Probability: ${probabilityDecimal}</p>
+                <p>TEST Probability: ${testProbability}</p>
+                <p>Real Probability: ${result.probability}</p>
             </div>
         `;
     }
+
     
     // Scroll to result
     resultContainer.scrollIntoView({ behavior: 'smooth' });
