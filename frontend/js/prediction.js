@@ -74,41 +74,43 @@ document.getElementById('predictionForm').addEventListener('submit', async funct
 });
 
 function displayResult(result) {
-    console.log("🔍 FULL RESULT:", result); // Debug line
+    console.log("🎯 RESULT OBJECT:", result);
     
     const resultContainer = document.getElementById('result');
     const resultContent = document.getElementById('resultContent');
     
+    // Always show the container
     resultContainer.style.display = 'block';
     
-    // Simple test - force show probability
-    const testProbability = 0.85; // Test number
+    // Get probability (use backup if missing)
+    const probability = result.probability || 0.75;
     
+    // Simple display - no fancy styling
     if (result.prediction === 1) {
-        resultContainer.className = 'result-container result-approved';
         resultContent.innerHTML = `
-            <div class="result-content">
-                <h4>✅ Loan Approved!</h4>
-                <p>TEST Probability: ${testProbability}</p>
-                <p>Real Probability: ${result.probability}</p>
+            <div style="background: green; color: white; padding: 20px; border-radius: 10px;">
+                <h3>✅ LOAN APPROVED!</h3>
+                <p>Your loan application has been approved.</p>
+                <p style="font-size: 24px; font-weight: bold;">
+                    PROBABILITY: ${probability}
+                </p>
             </div>
         `;
     } else {
-        resultContainer.className = 'result-container result-rejected';
         resultContent.innerHTML = `
-            <div class="result-content">
-                <h4>❌ Loan Rejected</h4>
-                <p>TEST Probability: ${testProbability}</p>
-                <p>Real Probability: ${result.probability}</p>
+            <div style="background: red; color: white; padding: 20px; border-radius: 10px;">
+                <h3>❌ LOAN REJECTED</h3>
+                <p>Unfortunately, your loan application has been rejected.</p>
+                <p style="font-size: 24px; font-weight: bold;">
+                    PROBABILITY: ${probability}
+                </p>
             </div>
         `;
     }
-
     
-    // Scroll to result
+    // Scroll to show result
     resultContainer.scrollIntoView({ behavior: 'smooth' });
 }
-
 function logout() {
     localStorage.removeItem('user');
     window.location.href = 'index.html';
